@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dark / Light Mode Toggler</h1>
+    <p> Welcome to this mini theme switcher webpage. Use the toggle button below to easily switch 
+        between light mode and dark mode based on your preference.</p>
+</body>
+<script>
+    // Dark / Light Mode:
+    let body = document.querySelector("body")
+    let btn = document.createElement("button")
+    btn.textContent = "Dark Mode 🌙"
+    console.log(btn);
+    document.body.appendChild(btn)
+    
+    let btnTwo = document.createElement("button")
+    btnTwo.textContent = "Light Mode ☀"
+    console.log(btnTwo);
+    document.body.appendChild(btnTwo)
+
+    btn.addEventListener("click", ()=> {
+        body.style.background = "black"
+        body.style.color = "white"
+    })
+
+    btnTwo.addEventListener("click", ()=> {
+        body.style.background = "white"
+        body.style.color = "black"
+    })
+</script>
+</html>

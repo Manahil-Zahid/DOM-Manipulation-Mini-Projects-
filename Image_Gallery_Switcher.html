@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      margin-top: 50px;
+    }
+
+    img {
+      width: 300px;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+    }
+</style>
+</head>
+<body>
+    <h2>Image Gallery</h2>
+
+    <img id="galleryImage" src="Images/images (1).png">
+
+    <br>
+
+    <button onclick="prevImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+
+</body>
+ <script>
+    let images = [
+      "Images/Cafea boabe.jfif",
+      "Images/download (13).jfif",
+      "Images/download (14).jfif"
+    ];
+
+    let index = 0;
+
+    function showImage() {
+      document.getElementById("galleryImage").src = images[index];
+    }
+
+    function nextImage() {
+      index++;
+      if (index >= images.length) {
+        index = 0;
+      }
+      showImage();
+    }
+
+    function prevImage() {
+      index--;
+      if (index < 0) {
+        index = images.length - 1;
+      }
+      showImage();
+    }
+  </script>
+
+</html>

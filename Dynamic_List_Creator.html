@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dynamic List Creator:</h1>
+</body>
+<script>
+    // CREATE HEADING ONE(e.g h1):
+    let headOne = document.createElement("h1")
+    headOne.textContent = "Todo List"
+    document.body.appendChild(headOne)
+    console.log(headOne);
+    
+    // CREATE INPUT ELEMENTS NOW:
+    let input = document.createElement("input")
+    input.type = "text"
+    input.value = ""
+    document.body.appendChild(input)
+    console.log(input);
+    
+    // CREATE BUTTON:
+    let btn = document.createElement("button")
+    btn.textContent = "addTask➕"
+    document.body.appendChild(btn)
+
+    // CREATE LIST:
+    let list = document.createElement("ol")
+    document.body.appendChild(list)
+
+
+    btn.addEventListener("click", ()=> {
+        let item = document.createElement("li")
+        item.textContent = input.value
+        list.appendChild(item)
+        input.value = ""
+    })
+    
+</script>
+</html>
