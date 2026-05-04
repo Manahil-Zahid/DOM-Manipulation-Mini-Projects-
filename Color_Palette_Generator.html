@@ -7,30 +7,37 @@
 
 <style>
     body {
-      transition: 0.3s;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; 
     }
 
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border: none;
-      border-radius: 10px;
+    .myBtn {
+        padding: 10px 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        border: none;
     }
+
 </style>
 </head>
 <body>
-     <button onclick="changeColor()">Change Background</button>
+           
 </body>
 <script>
-     function changeColor() {
-      let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
-      document.body.style.backgroundColor = randomColor;
-    }
+    let btn = document.createElement("button")
+    btn.textContent = "Change Background"
+    document.body.appendChild (btn)
+    btn.classList.add("myBtn")
+    console.log(btn);
+    
+    btn.addEventListener("click", ()=> {
+      let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16)
+      document.body.style.backgroundColor = randomColor
+    })
+
 </script>
 </html>

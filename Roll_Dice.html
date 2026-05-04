@@ -4,77 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #ffb6b9, #fae3d9);
-      font-family: Arial, sans-serif;
-    }
 
-    .card {
-      background: #fff8e7;
-      padding: 30px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      width: 250px;
-    }
+    <style>
+        body {
+            background-color:rgb(93, 238, 240);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-    h2 {
-      color: #c94f7c;
-      margin-bottom: 20px;
-    }
+        .head {
+            margin-top: 40px;
+        }
 
-    #dice {
-      font-size: 70px;
-      margin: 15px 0;
-    }
+        .main_container {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 20px;
-      background: #c94f7c;
-      color: white;
-      font-size: 14px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+            margin-top: 40px;
+            padding: 30px 50px;
+            border-radius: 8px;
+        }
 
-    button:hover {
-      background: #a83d63;
-    }
+        img {
+            width: 80px;
+            height: 80px;
 
-    .result {
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: #444;
-    }
-  </style>
+            margin-top: 20px;
+        }
 
+        button {
+            margin-top: 40px;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div class="card">
-    <div class="result">You got: <span id="number">-</span> 🎯</div>
-
-    <div id="dice">🎲</div>
-
-    <button onclick="rollDice()">ROLL DICE</button>
-  </div>
+    
 </body>
 <script>
-    let diceFaces = ["⚀","⚁","⚂","⚃","⚄","⚅"];
+    let headOne = document.createElement("h1")
+    headOne.textContent = "Roll The Dice🎲"
+    document.body.appendChild(headOne)
+    headOne.classList.add("head")
+    console.log(headOne);
 
-    function rollDice() {
-      let randomNumber = Math.floor(Math.random() * 6);
+    let container = document.createElement("div")
+    document.body.appendChild(container)
+    container.classList.add("main_container")
+    console.log(container);
 
-      document.getElementById("dice").innerText = diceFaces[randomNumber];
-      document.getElementById("number").innerText = randomNumber + 1;
-    }
-  </script>
+    let headTwo = document.createElement("h2")
+    headTwo.textContent = "You Got: - 🎯"
+    
+    let myImg = document.createElement("img")
+    myImg.src = "Images/images (2).jfif"
 
+    let btn = document.createElement("button")
+    btn.textContent = "Roll Dice"
+
+
+    container.appendChild(headTwo)
+    container.appendChild(myImg)
+    container.appendChild(btn)
+    
+    
+    let images = [
+        "Images/dice1.png",
+        "Images/dice2.png",
+        "Images/dice3.png",
+        "Images/dice4.png",
+        "Images/dice5.png",
+        "Images/dice6.png"
+    ]
+
+    btn.addEventListener("click", ()=> {
+
+        let randomIndex = Math.floor(Math.random() * images.length)
+        myImg.src = images[randomIndex]
+        headTwo.textContent = "You Got: " + (randomIndex + 1) + "🎯"
+    })
+
+
+    
+</script>
 </html>
