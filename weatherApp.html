@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #9face6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .weather-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 300px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #4facfe;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00c6ff;
+    }
+
+    h3 {
+      margin-top: 20px;
+      color: #222;
+      min-height: 30px;
+    }
+  </style>
+</head>
+<body>
+    <div class="weather-box">
+        <h1>Weather App</h1>
+        <input type="text" placeholder="Enter city name">
+        <br>
+        <button>Get Weather</button>
+        <h3></h3>
+  </div>
+</body>
+<script>
+    let input = document.querySelector("input")
+    let btn = document.querySelector("button")
+    let text = document.querySelector("h3")
+
+    //https://api.openweathermap.org/data/2.5/weather?q=peshawar&appid=560dc8bfa2794a7872a2c953177e7dd9
+    btn.addEventListener("click" , ()=>{
+        let cityName = input.value
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=560dc8bfa2794a7872a2c953177e7dd9&units=metric`)
+    .then(response => response.json())
+    .then(data => {
+        text.textContent = `Current Temp of  ${cityName} is ${data.main.temp}°C`
+    })
+    })
+
+    
+
+</script>
+</html>

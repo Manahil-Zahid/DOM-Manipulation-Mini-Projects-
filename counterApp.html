@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: lightblue;
+        }
+
+        .container{
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        h1{
+            color: black;
+        }
+
+        h2{
+            font-size: 50px;
+        }
+
+        button{
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        #increase{
+            background-color: green;
+        }
+
+        #decrease{
+            background-color: red;
+        }
+
+        #reset{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Counter App</h1>
+
+        <h2>0</h2>
+
+        <button id="increase">Increase</button>
+        <button id="decrease">Decrease</button>
+        <button id="reset">Reset</button>
+    </div>
+
+    <script>
+        let count = 0
+
+        let text = document.querySelector("h2")
+
+        let increaseBtn = document.querySelector("#increase")
+        let decreaseBtn = document.querySelector("#decrease")
+        let resetBtn = document.querySelector("#reset")
+
+        increaseBtn.addEventListener("click" , ()=>{
+            count++
+            text.textContent = count
+        })
+
+        decreaseBtn.addEventListener("click" , ()=>{
+            count--
+            text.textContent = count
+        })
+
+        resetBtn.addEventListener("click" , ()=>{
+            count = 0
+            text.textContent = count
+        })
+    </script>
+
+</body>
+</html>

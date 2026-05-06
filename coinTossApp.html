@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Toss App</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: peachpuff;
+        }
+
+        .container{
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        h1{
+            color: black;
+        }
+
+        h2{
+            font-size: 50px;
+        }
+
+        button{
+            padding: 10px 20px;
+            border: none;
+            background-color: orange;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Coin Toss App</h1>
+
+        <h2>?</h2>
+
+        <button>Toss Coin</button>
+    </div>
+
+    <script>
+        let btn = document.querySelector("button")
+
+        let text = document.querySelector("h2")
+
+        btn.addEventListener("click" , ()=>{
+
+            let randomNumber = Math.random()
+
+            if(randomNumber < 0.5){
+                text.textContent = "Head"
+            }
+
+            else{
+                text.textContent = "Tail"
+            }
+
+        })
+    </script>
+
+</body>
+</html>
